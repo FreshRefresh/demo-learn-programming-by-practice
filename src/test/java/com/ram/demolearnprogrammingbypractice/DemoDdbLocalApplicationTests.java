@@ -12,6 +12,7 @@ import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
+import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.cli.ParseException;
@@ -55,6 +56,15 @@ class DemoDdbLocalApplicationTests {
       Table table = dynamoDB.createTable(request);
 
       table.waitForActive();
+
+      TableDescription tableDescription =
+          dynamoDB.getTable("Ram_Table").describe();
+
+      System.out.printf("%s: %s \t ReadCapacityUnits: %d \t WriteCapacityUnits: %d",
+          tableDescription.getTableStatus(),
+          tableDescription.getTableName(),
+          tableDescription.getProvisionedThroughput().getReadCapacityUnits(),
+          tableDescription.getProvisionedThroughput().getWriteCapacityUnits());
 
     } catch (ParseException e) {
       e.printStackTrace();
