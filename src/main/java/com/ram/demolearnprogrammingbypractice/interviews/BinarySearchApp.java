@@ -1,5 +1,8 @@
 package com.ram.demolearnprogrammingbypractice.interviews;
 
+/**
+ * Write a function to find the target elements positions in given sorted array of elements. If the target element not found then return -1,-1.
+ */
 public class BinarySearchApp {
 
   public static void main(String[] args) {
@@ -15,9 +18,8 @@ public class BinarySearchApp {
 
     if (inputArray != null && inputArray.length > 0) {
       int targetElementStartIndex = findIndex(inputArray, target, true);
-      int targetElementEndIndex = -1;
       if (targetElementStartIndex != -1) {
-        targetElementEndIndex = findIndex(inputArray, target, false);
+        int targetElementEndIndex = findIndex(inputArray, target, false);
         return new int[]{targetElementStartIndex, targetElementEndIndex};
       }
     }
