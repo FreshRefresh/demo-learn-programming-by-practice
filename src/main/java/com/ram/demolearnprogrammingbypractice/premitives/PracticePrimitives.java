@@ -34,20 +34,20 @@ public class PracticePrimitives {
 
     Byte tmep = Byte.valueOf("122");
     // Integer to Binary
-//    System.out.println("Integer 5 to Binary : " + Integer.toBinaryString(5));
+    // System.out.println("Integer 5 to Binary : " + Integer.toBinaryString(5));
     System.out.println("Integer -1 to Binary : " + Integer.toBinaryString(-1) + " Number of bits : " + Integer.toBinaryString(-5).length());// 2's complement
-//    System.out.println("Long 5 to Binary : " + Long.toBinaryString(5) + " Number of bits : " + Long.toBinaryString(5).length());// 2's complement
-//    System.out.println("Long -5 to Binary : " + Long.toBinaryString(-5) + " Number of bits : " + Long.toBinaryString(-5).length());// 2's complement
-    //1 * 2 pw 2+ 0 * 2 pw 1+  2pow 0 * 1
+    //    System.out.println("Long 5 to Binary : " + Long.toBinaryString(5) + " Number of bits : " + Long.toBinaryString(5).length());// 2's complement
+    //    System.out.println("Long -5 to Binary : " + Long.toBinaryString(-5) + " Number of bits : " + Long.toBinaryString(-5).length());// 2's complement
+    // 1 * 2 pw 2+ 0 * 2 pw 1+  2pow 0 * 1
 
     int res = computeAverage(Integer.MAX_VALUE, Integer.MAX_VALUE);
     System.out.println("res  = " + res);
     System.out.println("Integer max = " + Integer.toBinaryString(Integer.MAX_VALUE));
     System.out.println("Average of 10, 20 = " + res);
 
-
     float q = 506.123456f;
     float fs = 6.1231233f;
+
     System.out.println("Float value = " + Float.MAX_EXPONENT);
     System.out.println("Float value = " + Float.MAX_VALUE);
     System.out.println("Float value = " + Double.MAX_VALUE);
@@ -59,7 +59,6 @@ public class PracticePrimitives {
     //int result = a + (b - a) / 2;
     return result;
   }
-
 
 /// Float - Base Exponent and Mantissa  = 1 , 8 bits for
 }

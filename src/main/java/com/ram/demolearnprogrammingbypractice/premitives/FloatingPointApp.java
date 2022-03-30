@@ -1,12 +1,10 @@
 package com.ram.demolearnprogrammingbypractice.premitives;
 
-import com.amazonaws.services.dynamodbv2.xspec.B;
 import java.math.BigDecimal;
 
 public class FloatingPointApp {
 
   public static void main(String[] args) {
-
     exploreFloats();
   }
 

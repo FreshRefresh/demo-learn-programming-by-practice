@@ -1,6 +1,5 @@
 package com.ram.demolearnprogrammingbypractice.ddb;
 
-
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
