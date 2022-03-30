@@ -8,6 +8,7 @@ import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.local.main.ServerRunner;
 import com.amazonaws.services.dynamodbv2.local.server.DynamoDBProxyServer;
+import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
@@ -33,14 +34,15 @@ class DemoDdbLocalApplicationTests {
       dynamoDBProxyServer = ServerRunner.createServerFromCommandLineArgs(new String[]{"-dbPath", "ddb-data"
           , "-port", "8000"});
       dynamoDBProxyServer.start();
+
       AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
                                                          .withCredentials(new ProfileCredentialsProvider("devuser"))
                                                          .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
                                                          .build();
 
       DynamoDB dynamoDB = new DynamoDB(client);
-      List<com.amazonaws.services.dynamodbv2.model.AttributeDefinition> attributeDefinitions = new ArrayList<>();
-      attributeDefinitions.add(new com.amazonaws.services.dynamodbv2.model.AttributeDefinition().withAttributeName("Id").withAttributeType("N"));
+      List<AttributeDefinition> attributeDefinitions = new ArrayList<>();
+      attributeDefinitions.add(new AttributeDefinition().withAttributeName("Id").withAttributeType("N"));
 
       List<KeySchemaElement> keySchema = new ArrayList<>();
       keySchema.add(new com.amazonaws.services.dynamodbv2.model.KeySchemaElement().withAttributeName("Id").withKeyType(KeyType.HASH));
@@ -71,7 +73,6 @@ class DemoDdbLocalApplicationTests {
     } catch (Exception exception) {
       exception.printStackTrace();
     }
-
   }
 
   @AfterEach
