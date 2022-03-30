@@ -1,18 +1,18 @@
 package com.ram.demolearnprogrammingbypractice.interviews;
 
 /**
- * Write a function to find the target elements positions in given sorted array of elements. If the target element not found then return -1,-1.
+ * Write a function to find the target elements positions in a given sorted array of elements.
+ * If the target element not found then return {-1,-1 }.
  */
 public class BinarySearchApp {
 
   public static void main(String[] args) {
 
     int[] inputArray = {1, 2, 3, 4, 5, 5, 5, 5, 9};
-    int targetElement = 10;
+    int targetElement = 5;
     int[] result = findIndices(inputArray, targetElement);
     System.out.println("Result = { " + result[0] + "  " + result[1] + " }");
   }
-
 
   public static int[] findIndices(int[] inputArray, int target) {
 

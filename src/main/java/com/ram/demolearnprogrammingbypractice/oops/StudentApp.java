@@ -4,13 +4,13 @@ public class StudentApp {
 
   public static void main(String[] args) {
 
-    Student suresh = new Student("Suresh", 1001);
-//    s1.name = "Suresh";
-//    s1.age = 1000;
-//    suresh.setName("Suresh");
-//    suresh.setAge(34);
+    Student usStudent = new UsStudent("Ram", 23, "White");
+    Student indiaStudent = new IndiaStudent("Ram", 23, "Reddy");
+    printStudentName(usStudent);
+    printStudentName(indiaStudent);
+  }
 
-    Student ram = StudentFactory.createStudent();
-
+  public static void printStudentName(Student student) {
+    System.out.println(student.getName());
   }
 }
