@@ -45,6 +45,13 @@ public class PracticePrimitives {
     System.out.println("Integer max = " + Integer.toBinaryString(Integer.MAX_VALUE));
     System.out.println("Average of 10, 20 = " + res);
 
+
+    float q = 506.123456f;
+    float fs = 6.1231233f;
+    System.out.println("Float value = " + Float.MAX_EXPONENT);
+    System.out.println("Float value = " + Float.MAX_VALUE);
+    System.out.println("Float value = " + Double.MAX_VALUE);
+
   }
 
   public static int computeAverage(int a, int b) {
@@ -52,4 +59,7 @@ public class PracticePrimitives {
     //int result = a + (b - a) / 2;
     return result;
   }
+
+
+/// Float - Base Exponent and Mantissa  = 1 , 8 bits for
 }
