@@ -37,6 +37,8 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         run: |
+          echo $DOCKER_USER
+          echo $DOCKER_TOKEN
           docker login -u DOCKER_USER -p DOCKER_TOKEN
       -
         name: Login to DockerHub
