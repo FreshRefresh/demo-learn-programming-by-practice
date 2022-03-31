@@ -16,7 +16,7 @@ RUN apk --no-cache add bash
 WORKDIR ${APP_HOME}
 
 COPY scripts/start-app.sh ${APP_HOME}/
-COPY target/demo-learn-programming-by-practice-0.0.1-SNAPSHOT.jar ./demo-learn-programming-by-practice-0.0.1-SNAPSHOT.jar
+COPY /home/runner/work/demo-learn-programming-by-practice/demo-learn-programming-by-practice/target/demo-learn-programming-by-practice-0.0.1-SNAPSHOT.jar ./demo-learn-programming-by-practice-0.0.1-SNAPSHOT.jar
 
 RUN chmod +x ${APP_HOME}/start-app.sh
 RUN apk --no-cache add curl
