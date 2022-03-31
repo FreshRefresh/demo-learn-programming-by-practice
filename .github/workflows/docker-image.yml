@@ -37,4 +37,4 @@ jobs:
         run: |
           docker images
           docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_TOKEN }}
-          docker push smittala6822/demo-learn-programming-by-practice:latest -a
+          docker push smittala6822/demo-learn-programming-by-practice:latest
