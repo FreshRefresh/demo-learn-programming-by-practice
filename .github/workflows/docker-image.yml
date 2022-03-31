@@ -37,9 +37,9 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         run: |
-          echo $DOCKER_USER
-          echo $DOCKER_TOKEN
-          docker login -u DOCKER_USER -p DOCKER_TOKEN
+          echo ${{ secrets.DOCKER_USER }}
+          echo ${{ secrets.DOCKER_TOKEN }}
+          docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_TOKEN }}
       -
         name: Login to DockerHub
         uses: docker/login-action@v1
