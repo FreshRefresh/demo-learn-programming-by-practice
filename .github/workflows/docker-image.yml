@@ -28,7 +28,7 @@ jobs:
       -
         name: Docker Build
         run:
-          docker build . -t smittala6822/demo-learn-programming-by-practice:tatest
+          docker build . -t ram/demo-learn-programming-by-practice:latest
       -
         name: docker login and push
         env:
@@ -37,4 +37,4 @@ jobs:
         run: |
           docker images
           docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_TOKEN }}
-          docker push smittala682/demo-learn-programming-by-practice:tatest
+          docker push ram/demo-learn-programming-by-practice:latest
