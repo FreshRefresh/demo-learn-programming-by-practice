@@ -37,8 +37,6 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         run: |
-          echo ${{ secrets.DOCKER_USER }}
-          echo ${{ secrets.DOCKER_TOKEN }}
           docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_TOKEN }}
       -
         name: Login to DockerHub
@@ -51,4 +49,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ram/demo-learn-programming-by-practice:$(date +%s)
+          tags: ram/demo-learn-programming-by-practice:tatest
