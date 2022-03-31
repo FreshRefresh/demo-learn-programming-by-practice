@@ -30,13 +30,11 @@ jobs:
         run:
           docker build . -t ram/demo-learn-programming-by-practice:tatest
       -
-        name: docker login
+        name: docker login and push
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         run: |
+          docker images
           docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_TOKEN }}
-      -
-        name: Docker Push
-        run:
           docker push ram/demo-learn-programming-by-practice:tatest
