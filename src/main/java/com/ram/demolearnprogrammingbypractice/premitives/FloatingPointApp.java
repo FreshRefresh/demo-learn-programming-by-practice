@@ -4,8 +4,11 @@ import java.math.BigDecimal;
 
 public class FloatingPointApp {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
+
     exploreFloats();
+
+    Thread.currentThread().join();
   }
 
   public static void exploreFloats() {
@@ -18,8 +21,7 @@ public class FloatingPointApp {
 
     BigDecimal b1 = BigDecimal.valueOf(f1);
     BigDecimal b2 = BigDecimal.valueOf(f2);
-    BigDecimal b3  = b1.subtract(b2);
+    BigDecimal b3 = b1.subtract(b2);
     System.out.println(b3);
   }
-
 }
