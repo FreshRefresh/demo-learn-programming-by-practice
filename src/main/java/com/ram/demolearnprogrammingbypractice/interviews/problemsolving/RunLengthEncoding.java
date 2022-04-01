@@ -44,15 +44,13 @@ public class RunLengthEncoding {
     char[] input1 = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
     char[] input12 = {'a'};
     char[] input4 = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
-//    System.out.println(compress(input1));
-//    System.out.println(compress(input12));
     RunLengthEncoding runLengthEncoding = new RunLengthEncoding();
     System.out.println(runLengthEncoding.compress(input4));
   }
 
   public int compress(char[] chars) {
 
-    StringBuilder sb = new StringBuilder();
+    final StringBuilder sb = new StringBuilder();
     if (chars == null || chars.length == 0) {
       return 0;
     }
@@ -63,13 +61,8 @@ public class RunLengthEncoding {
       if (ch == previousChar) {
         counter++;
       } else {
-
         if (previousChar != 0) {
-
-          sb.append(previousChar);
-          if (counter != 1) {
-            sb.append(counter);
-          }
+          extracted(sb, previousChar, counter);
         }
         previousChar = ch;
         counter = 1;
@@ -86,12 +79,17 @@ public class RunLengthEncoding {
     }
 
     for (char ch : result) {
-
       chars[i] = ch;
       i++;
-
     }
 
     return i;
+  }
+
+  private void extracted(StringBuilder sb, char previousChar, int counter) {
+    sb.append(previousChar);
+    if (counter != 1) {
+      sb.append(counter);
+    }
   }
 }
