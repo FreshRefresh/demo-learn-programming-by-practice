@@ -46,10 +46,11 @@ public class RunLengthEncoding {
     char[] input4 = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
 //    System.out.println(compress(input1));
 //    System.out.println(compress(input12));
-    System.out.println(compress(input4));
+    RunLengthEncoding runLengthEncoding = new RunLengthEncoding();
+    System.out.println(runLengthEncoding.compress(input4));
   }
 
-  public static int compress(char[] chars) {
+  public int compress(char[] chars) {
 
     StringBuilder sb = new StringBuilder();
     if (chars == null || chars.length == 0) {
